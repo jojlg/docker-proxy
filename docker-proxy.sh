@@ -54,7 +54,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    server_name _;
+    server_name nom_du_serveur.domaine;
 
     location / {
         return 301 https://\$host\$request_uri;
