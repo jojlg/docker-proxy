@@ -10,11 +10,16 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./conf.d:/etc/nginx/conf.d
-      - ./ssl:/etc/nginx/ssl
+      - proxy-02-nginx.conf:/etc/nginx/nginx.conf:ro
+      - proxy-02-conf.d:/etc/nginx/conf.d
+      - proxy-02-ssl:/etc/nginx/ssl
     networks:
       - network-proxy-02
+
+volumes:
+  proxy-02-ssl:
+  proxy-02-conf.d:
+  proxy-02-nginx.conf:
 
 networks:
   network-proxy-02:
@@ -64,5 +69,3 @@ EOL
 
 # Créer le répertoire ssl
 mkdir -p ssl
-
-echo "Configuration de nginx-proxy complétée avec succès."
