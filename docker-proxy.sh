@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Créer le fichier docker-compose.yml
 cat <<EOL > docker-compose.yml
 version: '3.7'
@@ -69,3 +71,8 @@ EOL
 
 # Créer le répertoire ssl
 mkdir -p ssl
+
+# Créer les volumes Docker
+docker volume create proxy-02-nginx.conf
+docker volume create proxy-02-conf.d
+docker volume create proxy-02-ssl
