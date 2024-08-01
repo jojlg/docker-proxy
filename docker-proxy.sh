@@ -5,7 +5,7 @@ version: '3.7'
 services:
   nginx-proxy:
     image: nginx:latest
-    container_name: nginx-proxy    
+    container_name: nginx-proxy-02    
     ports:
       - "80:80"
       - "443:443"
@@ -14,10 +14,10 @@ services:
       - ./conf.d:/etc/nginx/conf.d
       - ./ssl:/etc/nginx/ssl
     networks:
-      - network-proxy-01
+      - network-proxy-02
 
 networks:
-  network-proxy-01:
+  network-proxy-02:
     external: true
 EOL
 
